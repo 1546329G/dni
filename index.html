@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta DNI y RUC | API Perú</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Consulta DNI y RUC</h1>
+        <p>Datos de personas y empresas desde SUNAT</p>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab active" data-tipo="dni" id="tab-dni">Consulta DNI</button>
+            <button class="tab" data-tipo="ruc" id="tab-ruc">Consulta RUC</button>
+        </div>
+
+        <section class="card">
+            <div class="input-group" id="dni-group">
+                <label for="dni">Número de DNI (8 dígitos)</label>
+                <input type="text" id="dni" maxlength="8" inputmode="numeric" placeholder="Ej: 44556677">
+                <button id="boton">Buscar</button>
+            </div>
+            <div class="input-group" id="ruc-group" style="display:none">
+                <label for="ruc">Número de RUC (11 dígitos)</label>
+                <input type="text" id="ruc" maxlength="11" inputmode="numeric" placeholder="Ej: 20131312955">
+                <button id="boton-ruc">Buscar</button>
+            </div>
+
+            <div id="loader" class="loader" style="display:none">Consultando...</div>
+            <div id="error" class="error" style="display:none"></div>
+
+            <div id="resultado" class="resultado" style="display:none">
+                <h2 id="resultado-titulo"></h2>
+                <div id="resultado-datos"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>API: <code>apiperu.dev</code> · El token debe regenerarse en el panel de Api Tokens</p>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
